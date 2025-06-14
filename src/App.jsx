@@ -36,8 +36,8 @@
 // }
 
 // export default App;
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState, createContext } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import AgentManagement from './pages/AgentManagement';
 import ExportReceipts from './pages/ExportReceipts';
@@ -46,6 +46,7 @@ import ImportReceipts from './pages/ImportReceipts';
 import ProductManagement from './pages/ProductManagement';
 import ReceiptDetails from './components/receipt/ReceiptDetails';
 import ProductDetails from './components/product/ProductDetails';
+import ReportManagement from './pages/ReportManagement'; // Import ReportManagement
 
 export const ReceiptContext = createContext();
 export const ProductContext = createContext();
@@ -85,7 +86,7 @@ function App() {
               <Route path="/import-receipts" element={<ImportReceipts />} />
               <Route path="/receipts/:type/:receiptId/details" element={<ReceiptDetails />} />
               <Route path="/payments" element={<Placeholder pageName="Thu tiền" />} />
-              <Route path="/reports" element={<Placeholder pageName="Báo cáo" />} />
+              <Route path="/reports" element={<ReportManagement />} /> {/* Thêm route cho Báo cáo */}
               <Route path="/regulations" element={<Placeholder pageName="Quy định" />} />
               <Route path="*" element={<Placeholder pageName="Trang không tồn tại" />} />
             </Route>
